@@ -1,0 +1,19 @@
+springdoc:
+  swagger-ui:
+    path: /swagger
+
+
+spring:
+  data:
+    mongodb:
+      username: ${DB_USERNAME}
+      password: ${DB_PASSWORD}
+      host: ${DB_HOST}
+      port: ${DB_PORT}
+      database: ${DB_NAME}
+      authentication-database: admin
+
+turing:
+  first-state: q0
+  final-state: HALT
+  ms-timeout: 500

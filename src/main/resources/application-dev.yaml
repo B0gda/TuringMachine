@@ -1,0 +1,9 @@
+spring:
+  data:
+    mongodb:
+      username: turing-api-db
+      password: turing-api-db
+      host: localhost
+      port: 27020
+      database: turing-api-db
+      authentication-database: admin
