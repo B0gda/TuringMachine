@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  turing-api:
+    build:
+      context: .
+    ports:
+      - "8100:8080"
+    environment:
+      - DB_USERNAME=turing-api-db
+      - DB_PASSWORD=turing-api-db
+      - DB_HOST=mongo-db
+      - DB_PORT=27017
+      - DB_NAME=turing-api-db
+    depends_on:
+      - mongo-db
+    networks:
+      - internal
+  mongo-db:
+    container_name: mongo-db
+    image: mongo:5.0.22
+    ports:
+      - '27020:27017'
+    restart: always
+    logging:
+      options:
+        max-size: 1g
+    environment:
+      - MONGO_INITDB_DATABASE=turing-api-db
+      - MONGO_INITDB_ROOT_USERNAME=turing-api-db
+      - MONGO_INITDB_ROOT_PASSWORD=turing-api-db
+    networks:
+      - internal
+
+networks:
+  internal:
