@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Справочная информация о разработчиках</title>
+    <link rel="stylesheet" href="./styles/about-developers.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Справочная информация о разработчиках</h1>
+      <p class="university-info">
+        Самарский университет<br />
+        Кафедра программных систем<br />
+        <br />
+        Курсовой проект по дисциплине "Программная инженерия"
+      </p>
+      <p class="system-name">
+        Тема проекта: "Система моделирования машины Тьюринга"
+      </p>
+      <div class="developers">
+        <div class="developers-left">
+          <br /><br /><br />
+          <p>Разработчики:</p>
+          <br />
+          <br />
+          <br />
+          <br />
+          <p>Руководитель:</p>
+        </div>
+        <div class="developers-right">
+          <br />
+          <br /><br /><br />
+          <p>
+            Frontend - Садриев Б.А.<br />
+            Обучающийся 6413-020302D
+          </p>
+          <p>
+            Backend - Синицын М.Е.<br />
+            Обучающийся 6413-020302D
+          </p>
+          <br />
+          <p>
+            Зеленко Л.С.<br />
+            доцент кафедры программных систем
+          </p>
+          <br /><br /><br /><br />
+        </div>
+      </div>
+
+      <p class="footer">Самара 2023</p>
+    </div>
+    <div class="buttons">
+      <a class="system-button" href="./program-info.html" target="_blank"
+        >О системе</a
+      >
+      <a class="back-button" href="./index.html">Назад</a>
+    </div>
+    <div class="error-form hidden">
+      <div class="error-form__content">
+        <span class="error-form__icon">&#10060;</span>
+        <p class="error-form__text">Ошибка. Что-то пошло не так:(</p>
+      </div>
+    </div>
+    <script>
+      // Функция для проверки наличия файла по указанному пути
+      function checkFileExists2(url) {
+        return fetch(url, { method: "HEAD" })
+          .then((response) => {
+            return response.ok;
+          })
+          .catch((error) => {
+            console.error("Ошибка при проверке файла:", error);
+            return false;
+          });
+      }
+
+      // Обработчики событий для элементов с классом "system-button"
+      document
+        .querySelector(".system-button")
+        .addEventListener("click", async (event) => {
+          event.preventDefault();
+
+          const href = document
+            .querySelector(".system-button")
+            .getAttribute("href");
+
+          const fileExists = await checkFileExists2(href);
+
+          if (fileExists) {
+            window.open(href, "_blank"); // Открываем новое окно, если файл существует
+          } else {
+            handleInputErrorNoSuchFile();
+          }
+        });
+    </script>
+    <script src="./functionality/statusToMainForm.js"></script>
+  </body>
+</html>

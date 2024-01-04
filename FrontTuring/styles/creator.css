@@ -1,0 +1,166 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.title {
+  margin-top: 0;
+}
+
+.alphabet-section {
+  margin-bottom: 20px;
+}
+
+.alphabet-label {
+  margin-bottom: 5px;
+}
+.warning-text {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  color: #f44336;
+}
+#alphabet-input,
+#name-input {
+  padding: 5px;
+  width: 200px;
+}
+
+.states-table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.states-table th,
+.states-table td {
+  padding: 5px;
+}
+
+.state-selection,
+.action-selection {
+  margin-bottom: 20px;
+}
+
+.state-selection select,
+.action-selection button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.save-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/*table*/
+.table-overflow {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.statetable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.statetable th,
+.statetable td {
+  border: 1px solid #000;
+  padding: 5px;
+}
+
+.instruction-labels {
+  background-color: #f0f0f0;
+}
+
+.close-icon {
+  float: right;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Стили для выпадающих списков */
+select {
+  width: 100%;
+  padding: 5px;
+  margin: 2px 0;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: inherit;
+}
+
+/* Стили для ячеек с текстом */
+td {
+  text-align: center;
+}
+
+/*Success Fail Form*/
+
+.hidden {
+  display: none;
+}
+
+.success-form,
+.error-form {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  height: 100px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.success-form__content,
+.error-form__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.success-form__icon,
+.error-form__icon {
+  font-size: 36px;
+  margin-right: 10px;
+}
+
+.success-form {
+  border-color: #4caf50;
+  background-color: #d0f0c0;
+}
+
+.success-form__icon {
+  color: #4caf50;
+}
+
+.error-form {
+  border-color: #f44336;
+  background-color: #f8d7da;
+}
+
+.error-form__icon {
+  color: #f44336;
+}

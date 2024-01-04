@@ -1,0 +1,434 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1500px;
+  overflow: hidden;
+  height: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.buttons {
+  display: flex;
+  /* justify-content: center; */
+  margin-bottom: 10px;
+}
+
+.buttons a {
+  margin-right: 20px; /* Отступ между кнопками */
+}
+
+.buttons a:last-child {
+  margin-right: 0; /* У последней кнопки нет правого отступа */
+}
+
+.ago {
+  text-decoration: none;
+  color: #000;
+}
+button:hover {
+  background-color: #7a7a7a;
+}
+
+.buttons button {
+  margin-right: 10px;
+  margin: 0px auto;
+  padding: 3px 16px;
+  font-size: 14px;
+  border: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000000;
+  cursor: pointer;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+p.radio-label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+p.radio-label label {
+  margin-right: 15px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Стили для ленты Машины Тьюринга */
+.turing-machine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tape {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-bottom: 0px;
+}
+
+.symbols {
+  display: flex;
+}
+
+.symbols button {
+  padding: 8px 12px;
+  margin: 0 2px;
+  border: none;
+  cursor: pointer;
+}
+
+.center-symbol {
+  background-color: #d9e94c;
+}
+
+.move-left,
+.move-right {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.current-symbol-indicator {
+  font-size: 24px;
+}
+.warning-text {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  color: #f44336;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+#warning {
+  transition: opacity 0.5s ease-in-out;
+  animation: fadeOut 3s ease-in-out forwards;
+}
+
+/* Стили для операндов */
+.operands {
+  margin-bottom: 4px;
+  margin-top: 10px;
+}
+.operandsp {
+  margin-left: 15px;
+}
+.oper_typ {
+  margin-left: 10px;
+}
+
+.oper-alp {
+  margin-top: 4px;
+  margin-left: 0px;
+}
+.operand-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.operand-input-field {
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Стили для выпадающих списков */
+.dropdowns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+  margin-left: 30px;
+}
+
+.dropdown {
+  margin-right: 20px;
+}
+
+.dropdown p {
+  margin-bottom: 5px;
+}
+
+/*Таблица и что под ней*/
+
+.state-selection select,
+.action-selection button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.save-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/*table*/
+.table-overflow {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.statetable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.statetable th,
+.statetable td {
+  border: 1px solid #000;
+  padding: 5px;
+}
+
+.instruction-labels {
+  background-color: #f0f0f0;
+}
+
+.close-icon {
+  float: right;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Стили для выпадающих списков */
+select {
+  width: 100%;
+  padding: 5px;
+  margin: 2px 0;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: inherit;
+}
+#warningState {
+  color: #ff1010;
+}
+/* Стили для ячеек с текстом */
+td {
+  text-align: center;
+}
+
+/*Start-button*/
+
+.start-button,
+.start-button-next {
+  display: block;
+  margin: 10px auto;
+  padding: 15px 20px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.start-button:hover,
+.start-button-next:hover {
+  background-color: #f0f0f0;
+}
+
+/*Success Fail Form*/
+
+.hidden {
+  display: none;
+}
+
+.success-form,
+.error-form {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  height: 100px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.success-form__content,
+.error-form__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.success-form__icon,
+.error-form__icon {
+  font-size: 36px;
+  margin-right: 10px;
+}
+
+.success-form {
+  border-color: #4caf50;
+  background-color: #d0f0c0;
+}
+
+.success-form__icon {
+  color: #4caf50;
+}
+
+.error-form {
+  border-color: #f44336;
+  background-color: #f8d7da;
+}
+
+.error-form__icon {
+  color: #f44336;
+}
+
+/*Form Traces*/
+.turing-machine-next {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 760px;
+  height: 50%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1000;
+}
+
+.tape-next {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  overflow-x: auto;
+  max-width: 680px;
+  overflow-x: hidden;
+}
+
+.symbols-next button {
+  padding: 4px 6px;
+  margin: 0 2px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tape-container-next {
+  display: flex;
+  align-items: center;
+}
+
+.indexed-trace-next {
+  margin-right: 10px;
+  min-width: 30px;
+  text-align: right;
+}
+
+/*Start button*/
+.align-buttons {
+  display: flex;
+  align-items: center;
+}
+
+/* Скрытая область модального окна */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* Прозрачный фон */
+}
+
+/* Центрирование модального контента */
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fefefe; /* Цвет фона модального окна */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Тень для модального окна */
+  font-family: Arial, sans-serif; /* Шрифт */
+}
+
+/* Кнопка "Закрыть" */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Стили для внутренних элементов */
+.alphabet-section,
+.file-section {
+  margin-bottom: 20px;
+}
+
+#name-input,
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#name-input:focus,
+input[type="file"]:focus,
+button:focus {
+  outline: none;
+}
+
+/* Стили для ошибок */
+.name-error,
+.file-error {
+  color: red;
+  margin-top: 5px;
+  font-size: 12px;
+}

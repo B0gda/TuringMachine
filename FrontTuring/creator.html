@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Создание/Редактирование алгоритма</title>
+    <link rel="stylesheet" href="./styles/creator.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Создание/Редактирование алгоритма</h1>
+      <div class="alphabet-section">
+        <p class="alphabet-label">Название</p>
+        <input type="text" id="name-input" placeholder="Введите символы" />
+        <p class="name-error"></p>
+      </div>
+      <div class="alphabet-section">
+        <p class="alphabet-label">Алфавит</p>
+        <input type="text" id="alphabet-input" placeholder="Введите символы" />
+        <p class="alph-error"></p>
+      </div>
+      <div class="table-overflow">
+        <table class="statetable">
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+
+      <div class="state-selection">
+        <p>Выберите состояние</p>
+        <select id="state-select"></select>
+      </div>
+      <p id="warningState" class="warning-text"></p>
+      <div class="action-selection">
+        <p>Выберите действие</p>
+        <button class="add-right-button">Добавить справа</button>
+        <button class="add-left-button">Добавить слева</button>
+        <button class="delete-state-button">Удалить состояние</button>
+      </div>
+      <button class="save-button">Сохранить</button>
+    </div>
+
+    <div class="error-form hidden">
+      <div class="error-form__content">
+        <span class="error-form__icon">&#10060;</span>
+        <p class="error-form__text">Ошибка. Что-то пошло не так:(</p>
+      </div>
+    </div>
+
+    <script src="./functionality/tableCreator.js"></script>
+    <script src="./functionality/creatingAlg.js"></script>
+    <script src="./functionality/checkingTableForCorrectData.js"></script>
+    <script src="./functionality/statusToMainForm.js"></script>
+  </body>
+</html>

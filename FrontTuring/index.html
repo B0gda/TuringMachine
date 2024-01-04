@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Главная страница Машины Тьюринга</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="buttons">
+        <a
+          class="button-link button-link-pageNext"
+          href="./about-developers.html"
+        >
+          <button class="custom-button">О разработчиках</button>
+        </a>
+        <a
+          class="button-link button-link-pageNext"
+          href="./program-info.html"
+          target="_blank"
+        >
+          <button class="custom-button">О системе</button>
+        </a>
+        <a class="button-link">
+          <button class="custom-button-crt">Создать алгоритм</button>
+        </a>
+        <a class="button-link">
+          <button class="custom-button-ref">Редактировать алгоритм</button>
+        </a>
+        <a class="button-link">
+          <button class="custom-button export-alg-data">
+            Экспортировать алгоритм
+          </button>
+        </a>
+        <a class="button-link">
+          <button class="custom-button export-trc-data">
+            Экспортировать трассу
+          </button>
+        </a>
+        <a class="button-link">
+          <button class="custom-button-import-alg">
+            Импортировать алгоритм
+          </button>
+        </a>
+        <a>
+          <button class="look-trace" id="lookTraceButton">
+            Посмотреть трассу
+          </button>
+        </a>
+      </div>
+
+      <p class="radio-label">
+        Выбор ввода операндов:
+        <label
+          ><input type="radio" name="inputType" value="symbolic" checked />
+          Символьный</label
+        >
+        <label
+          ><input type="radio" name="inputType" value="numeric" />
+          Числовой</label
+        >
+      </p>
+      <p id="warning" class="warning-text"></p>
+      <!-- Лента Машины Тьюринга -->
+      <div class="turing-machine">
+        <div class="current-symbol-indicator hidden">▼</div>
+        <div class="tape">
+          <button class="move-left">◄</button>
+          <div class="symbols" id="tape-symbols"></div>
+          <button class="move-right">►</button>
+        </div>
+        <div class="new-res"></div>
+      </div>
+
+      <!-- Операнды -->
+      <div class="operands">
+        <div class="operand-input">
+          <p>Операнды:</p>
+          <p class="operandsp">1</p>
+          <input type="text" class="operand-input-field oper_typ" />
+          <p class="operandsp">2</p>
+          <input type="text" class="operand-input-field oper_typ" />
+        </div>
+      </div>
+
+      <!-- Выпадающие списки -->
+      <div class="dropdowns">
+        <div class="dropdown">
+          <p>Алфавит:</p>
+          <input
+            type="text"
+            class="operand-input-field oper-alp"
+            id="alphabet-input"
+            placeholder="Введите символы алфавита"
+            value="*x_"
+          />
+          <p class="alph-error"></p>
+        </div>
+
+        <div class="dropdown dropdownLoadAlg">
+          <p>Базовые алгоритмы:</p>
+          <select id="basicAlgorithmSelect">
+            <option value="" disabled selected></option>
+            <!-- Добавьте другие варианты выбора здесь -->
+          </select>
+        </div>
+        <div class="dropdown dropdownLoadAlg">
+          <p>Пользовательские алгоритмы:</p>
+          <select id="customAlgorithmSelect">
+            <option value="" disabled selected></option>
+            <!-- Добавьте другие варианты выбора здесь -->
+          </select>
+        </div>
+      </div>
+
+      <div class="table-overflow">
+        <table class="statetable">
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+      <div class="state-selection">
+        <p>Выберите состояние</p>
+        <select id="state-select"></select>
+      </div>
+      <p id="warningState" class="warning-text"></p>
+      <div class="action-selection">
+        <p>Выберите действие</p>
+        <button class="add-right-button">Добавить справа</button>
+        <button class="add-left-button">Добавить слева</button>
+        <button class="delete-state-button">Удалить состояние</button>
+      </div>
+
+      <!-- Режим выполнения алгоритма -->
+      <p>Режим исполнения алгоритма:</p>
+      <select id="execution-mode">
+        <option value="" disabled selected>Выберите режим</option>
+        <option value="step-by-step">Пошаговый</option>
+        <option value="auto-delay">Автоматический с задержкой</option>
+        <option value="auto">Автоматический</option>
+      </select>
+
+      <!-- Поле для скорости выполнения -->
+      <div class="speed-field">
+        <p>Скорость исполнения алгоритма:</p>
+        <select id="execution-speed">
+          <option value="" disabled selected>Выберите скорость</option>
+          <option value="slow">Медленный</option>
+          <option value="medium">Средний</option>
+          <option value="fast">Быстрый</option>
+        </select>
+      </div>
+
+      <!-- Кнопка "Запуск" -->
+      <div class="align-buttons">
+        <button class="start-button">Запуск</button>
+        <button class="start-button-next hidden">Следующий шаг</button>
+      </div>
+
+      <!-- <button class="start-button-test">Тест</button> -->
+      <div class="turing-machine-next hidden">
+        <button class="close-button-next">&times;</button>
+        <h2>Трассы</h2>
+        <div class="tape-list-next"></div>
+      </div>
+
+      <!-- Модальное окно -->
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span id="close-buttonModal" class="close">&times;</span>
+          <!-- Кнопка "Закрыть" -->
+          <div class="alphabet-section">
+            <p class="alphabet-label">Название</p>
+            <input type="text" id="name-input" placeholder="Введите название" />
+            <p class="name-error"></p>
+          </div>
+          <div class="file-section">
+            <input type="file" id="file-input" accept=".turing" />
+            <p class="file-error"></p>
+          </div>
+          <button id="import-action-button" class="start-button">
+            Импортировать
+          </button>
+        </div>
+      </div>
+
+      <div class="success-form hidden">
+        <div class="success-form__content">
+          <span class="success-form__icon">&#10003;</span>
+          <p class="success-form__text">Алгоритм успешно сохранен!</p>
+        </div>
+      </div>
+
+      <div class="error-form hidden">
+        <div class="error-form__content">
+          <span class="error-form__icon">&#10060;</span>
+          <p class="error-form__text">Ошибка. Что-то пошло не так:(</p>
+        </div>
+      </div>
+    </div>
+    <script src="./functionality/preloadAll.js"></script>
+    <script src="./functionality/line.js"></script>
+    <script src="./functionality/operands.js"></script>
+    <script src="./functionality/tableCreator.js"></script>
+    <script src="./functionality/algorithmExecutionSpeed.js"></script>
+    <script src="./functionality/statusToMainForm.js"></script>
+    <script src="./functionality/showTraces.js"></script>
+    <script src="./functionality/isSuccess.js"></script>
+    <script src="./functionality/workingWithRequests.js"></script>
+    <script src="./functionality/checkingTableForCorrectData.js"></script>
+    <script src="./functionality/startAlgorithm.js"></script>
+  </body>
+</html>

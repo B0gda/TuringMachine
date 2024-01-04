@@ -1,0 +1,126 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.ago {
+  text-decoration: none;
+  color: #000;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.title {
+  margin-top: 0;
+}
+
+.university-info {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.system-name {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.developers {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.developers p {
+  margin: 5px 0;
+}
+
+.developers-right {
+  text-align: right;
+}
+
+.buttons {
+  margin-bottom: 20px;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.system-button,
+.back-button {
+  display: block;
+  width: 100px;
+  margin: 30px auto;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: 1px solid #7a7a7a;
+  border-radius: 5px;
+  background-color: #e8e8e8;
+  cursor: pointer;
+  text-align: center;
+}
+
+.system-button:hover,
+.back-button:hover {
+  background-color: #cccccc;
+}
+
+.footer {
+  margin-bottom: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.success-form,
+.error-form {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  height: 100px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.success-form__content,
+.error-form__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.success-form__icon,
+.error-form__icon {
+  font-size: 36px;
+  margin-right: 10px;
+}
+
+.success-form {
+  border-color: #4caf50;
+  background-color: #d0f0c0;
+}
+
+.success-form__icon {
+  color: #4caf50;
+}
+
+.error-form {
+  border-color: #f44336;
+  background-color: #f8d7da;
+}
+
+.error-form__icon {
+  color: #f44336;
+}
